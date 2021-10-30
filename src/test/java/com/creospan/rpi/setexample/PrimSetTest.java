@@ -17,6 +17,10 @@ class PrimSetTest {
 
     @Test
     void setCanHoldAnObject() {
+        PrimSet primSet = new PrimSet();
+        String someString = "someString";
+        primSet.add(someString);
+        assertThat(primSet.contains(someString)).isTrue();
     }
 
     @Test
