@@ -5,6 +5,9 @@ public class PrimSet {
     private String myContainer = "";
 
     public void add(String someString) {
+        if (someString == null) {
+            throw new NullPointerException("PrimSet does not allow nulls");
+        }
         myContainer = someString;
     }
 

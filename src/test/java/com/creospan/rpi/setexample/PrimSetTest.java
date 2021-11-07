@@ -29,6 +29,7 @@ class PrimSetTest {
         NullPointerException nullPointerException = assertThrows(NullPointerException.class, () -> {
             primSet.add(null);
         });
+        assertThat(nullPointerException.getMessage()).isEqualTo("PrimSet does not allow nulls");
     }
 
     @Test
