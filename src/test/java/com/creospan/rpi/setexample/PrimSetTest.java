@@ -25,6 +25,10 @@ class PrimSetTest {
 
     @Test
     void setCannotContainNulls() {
+        PrimSet primSet = new PrimSet();
+        NullPointerException nullPointerException = assertThrows(NullPointerException.class, () -> {
+            primSet.add(null);
+        });
     }
 
     @Test
