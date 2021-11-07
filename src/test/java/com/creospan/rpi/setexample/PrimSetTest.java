@@ -33,11 +33,23 @@ class PrimSetTest {
     }
 
     @Test
-    void setCannotHoldDuplicates() {
+    void setCanHoldManyObjects() {
+        PrimSet primSet = new PrimSet();
+        String[] someStrings = {"String1", "String2", "String3"};
+
+        Arrays.stream(someStrings).forEach(s -> {
+            primSet.add(s);
+        });
+
+        assertThat(primSet.size()).isEqualTo(someStrings.length);
+
+        Arrays.stream(someStrings).forEach(s -> {
+            assertThat(primSet.contains(s));
+        });
     }
 
     @Test
-    void setCanHoldManyObjects() {
+    void setCannotHoldDuplicates() {
     }
 
     @Test

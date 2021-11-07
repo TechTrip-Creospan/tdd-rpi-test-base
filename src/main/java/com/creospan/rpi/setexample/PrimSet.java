@@ -14,4 +14,8 @@ public class PrimSet {
     public boolean contains(String someString) {
         return myContainer.equals(someString);
     }
+
+    public int size() {
+        return 0;
+    }
 }
