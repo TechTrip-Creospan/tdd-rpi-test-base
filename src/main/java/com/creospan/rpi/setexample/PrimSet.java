@@ -26,6 +26,7 @@ public class PrimSet {
     }
 
     public boolean isEmpty() {
-        return false;
+        return (mySetContainer.length == 0);
     }
+
 }

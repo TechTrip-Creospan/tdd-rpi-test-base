@@ -9,14 +9,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class PrimSetTest {
+
+    PrimSet primSet;
+
     @BeforeEach
     void setUp() {
-
+        primSet = new PrimSet();
     }
 
     @Test
     void setCanHoldAnObject() {
-        PrimSet primSet = new PrimSet();
         String someString = "someString";
         primSet.add(someString);
         assertThat(primSet.contains(someString)).isTrue();
@@ -24,7 +26,6 @@ class PrimSetTest {
 
     @Test
     void setCannotContainNulls() {
-        PrimSet primSet = new PrimSet();
         NullPointerException nullPointerException = assertThrows(NullPointerException.class, () -> {
             primSet.add(null);
         });
@@ -33,7 +34,6 @@ class PrimSetTest {
 
     @Test
     void setCanHoldManyObjects() {
-        PrimSet primSet = new PrimSet();
         String[] someStrings = {"String1", "String2", "String3"};
 
         Arrays.stream(someStrings).forEach(s -> {
@@ -49,7 +49,6 @@ class PrimSetTest {
 
     @Test
     void setCannotHoldDuplicates() {
-        PrimSet primSet = new PrimSet();
         String someString = "someString";
 
         primSet.add(someString);
@@ -61,12 +60,12 @@ class PrimSetTest {
 
     @Test
     void setIsEmpty() {
-        PrimSet primSet = new PrimSet();
         assertThat(primSet.isEmpty()).isTrue();
     }
 
     @Test
     void setCanBeCleared() {
+
     }
 
     @Test
