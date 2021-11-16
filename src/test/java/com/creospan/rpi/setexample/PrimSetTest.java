@@ -49,6 +49,14 @@ class PrimSetTest {
 
     @Test
     void setCannotHoldDuplicates() {
+        PrimSet primSet = new PrimSet();
+        String someString = "someString";
+
+        primSet.add(someString);
+        primSet.add(someString);
+
+        assertThat(primSet.size()).isEqualTo(1);
+        assertThat(primSet.contains(someString));
     }
 
     @Test
