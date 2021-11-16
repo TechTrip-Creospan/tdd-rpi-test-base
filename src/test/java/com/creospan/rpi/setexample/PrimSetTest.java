@@ -74,5 +74,15 @@ class PrimSetTest {
 
     @Test
     void objectsCanBeRemovedFromSet() {
+        String[] someStrings = {"String1", "String2", "String3"};
+
+        Arrays.stream(someStrings).forEach(s -> {
+            primSet.add(s);
+        });
+
+        primSet.remove(someStrings[0]);
+
+        assertThat(primSet.contains(someStrings[0])).isFalse();
+        assertThat(primSet.size()).isEqualTo(someStrings.length -1);
     }
 }

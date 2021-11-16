@@ -32,4 +32,7 @@ public class PrimSet {
     public void clear() {
         mySetContainer = new String[0];
     }
+
+    public void remove(String someString) {
+    }
 }
