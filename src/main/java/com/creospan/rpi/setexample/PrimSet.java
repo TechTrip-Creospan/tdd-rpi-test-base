@@ -1,6 +1,7 @@
 package com.creospan.rpi.setexample;
 
 import java.util.Arrays;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class PrimSet {
 
@@ -34,5 +35,21 @@ public class PrimSet {
     }
 
     public void remove(String someString) {
+        if (!this.contains(someString)) {
+            return;
+        }
+
+        String[] newContainer = new String[mySetContainer.length - 1];
+
+        AtomicInteger index = new AtomicInteger(0);
+
+        Arrays.stream(mySetContainer).forEach(valueInSet -> {
+            // Don't put someString on the left, protect from nulls
+            if (!valueInSet.equals(someString)) {
+                newContainer[index.getAndIncrement()] = valueInSet;
+            }
+        });
+
+        mySetContainer = newContainer;
     }
 }
