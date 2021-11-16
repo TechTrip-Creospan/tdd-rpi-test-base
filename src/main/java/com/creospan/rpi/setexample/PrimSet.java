@@ -10,8 +10,11 @@ public class PrimSet {
         if (someString == null) {
             throw new NullPointerException("PrimSet does not allow nulls");
         }
-        mySetContainer = Arrays.copyOf(mySetContainer, mySetContainer.length + 1);
-        mySetContainer[mySetContainer.length - 1] = someString;
+
+        if (!this.contains(someString)) {
+            mySetContainer = Arrays.copyOf(mySetContainer, mySetContainer.length + 1);
+            mySetContainer[mySetContainer.length - 1] = someString;
+        }
     }
 
     public boolean contains(String someString) {
