@@ -61,6 +61,8 @@ class PrimSetTest {
 
     @Test
     void setIsEmpty() {
+        PrimSet primSet = new PrimSet();
+        assertThat(primSet.isEmpty()).isTrue();
     }
 
     @Test
