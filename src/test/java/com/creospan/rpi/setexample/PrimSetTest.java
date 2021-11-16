@@ -65,7 +65,11 @@ class PrimSetTest {
 
     @Test
     void setCanBeCleared() {
-
+        primSet.add("some String");
+        primSet.add("another String");
+        primSet.clear();
+        assertThat(primSet.size()).isEqualTo(0);
+        assertThat(primSet.isEmpty()).isTrue();
     }
 
     @Test

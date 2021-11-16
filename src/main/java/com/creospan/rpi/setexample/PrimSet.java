@@ -29,4 +29,7 @@ public class PrimSet {
         return (mySetContainer.length == 0);
     }
 
+    public void clear() {
+
+    }
 }
