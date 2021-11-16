@@ -1,21 +1,24 @@
 package com.creospan.rpi.setexample;
 
+import java.util.Arrays;
+
 public class PrimSet {
 
-    private String myContainer = "";
+    private String[] mySetContainer = new String[0];
 
     public void add(String someString) {
         if (someString == null) {
             throw new NullPointerException("PrimSet does not allow nulls");
         }
-        myContainer = someString;
+        mySetContainer = Arrays.copyOf(mySetContainer, mySetContainer.length + 1);
+        mySetContainer[mySetContainer.length - 1] = someString;
     }
 
     public boolean contains(String someString) {
-        return myContainer.equals(someString);
+        return Arrays.stream(mySetContainer).anyMatch(valueInSet -> someString.equals(valueInSet));
     }
 
     public int size() {
-        return 0;
+        return mySetContainer.length;
     }
 }
