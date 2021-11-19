@@ -80,9 +80,13 @@ class PrimSetTest {
             primSet.add(s);
         });
 
-        primSet.remove(someStrings[0]);
+        primSet.remove(null);
+        assertThat(primSet.contains(null)).isFalse();
 
+        primSet.remove(someStrings[0]);
         assertThat(primSet.contains(someStrings[0])).isFalse();
         assertThat(primSet.size()).isEqualTo(someStrings.length -1);
     }
+
+
 }
