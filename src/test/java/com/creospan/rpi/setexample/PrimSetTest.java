@@ -26,9 +26,7 @@ class PrimSetTest {
 
     @Test
     void setCannotContainNulls() {
-        NullPointerException nullPointerException = assertThrows(NullPointerException.class, () -> {
-            primSet.add(null);
-        });
+        NullPointerException nullPointerException = assertThrows(NullPointerException.class, () -> primSet.add(null));
         assertThat(nullPointerException.getMessage()).isEqualTo("PrimSet does not allow nulls");
     }
 
@@ -85,8 +83,8 @@ class PrimSetTest {
 
         primSet.remove(someStrings[0]);
         assertThat(primSet.contains(someStrings[0])).isFalse();
+        assertThat(primSet.contains(someStrings[1])).isTrue();
+        assertThat(primSet.contains(someStrings[2])).isTrue();
         assertThat(primSet.size()).isEqualTo(someStrings.length -1);
     }
-
-
 }

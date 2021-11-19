@@ -19,7 +19,7 @@ public class PrimSet {
     }
 
     public boolean contains(String someString) {
-        return Arrays.stream(mySetContainer).anyMatch(valueInSet -> someString.equals(valueInSet));
+        return Arrays.stream(mySetContainer).anyMatch(valueInSet -> valueInSet.equals(someString));
     }
 
     public int size() {
